@@ -51,6 +51,10 @@ R == UNION {P, A, L}
 (*     m: message                                                          *)
 (*     x: sender                                                           *)
 (*     y: set of recivers                                                  *)
+(*                                                                         *)
+(* actually message lost is ignored here, but if you want to introduce it  *)
+(* into the specification, just add '\E recieved \in y:' and replace 'y'   *)
+(* to 'recieved' in the orginal expression                                 *)
 (***************************************************************************)
 
 Send(x, y, m) ==
@@ -131,5 +135,5 @@ ConditionLiveness == <>(\E l \in L: \E i \in I[l]: i["t"] = "LEARNED")
 THEOREM Spec => []ConditionSafety
 =============================================================================
 \* Modification History
-\* Last modified Fri Mar 27 09:19:06 SGT 2020 by user
-\* Created Thu Feb 17 18:00:54 SGT 2020 by user
+\* Last modified Fri Mar 27 10:50:03 JST 2020 by user
+\* Created Fri Feb 28 10:03:22 JST 2020 by user
